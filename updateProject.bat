@@ -1,8 +1,6 @@
 :: This script will first create a backup of the original or current hosts
-:: file and save it in a file titled "hosts.skel"
+:: file and save it in a file titled "hosts.bak"
 ::
-:: If "hosts.skel" exists, the new hosts file with the customized unified hosts
-:: will be copied to the proper path. Next, the DNS cache will be refreshed.
 ::
 :: THIS BAT FILE MUST BE LAUNCHED WITH ADMINISTRATOR PRIVILEGES
 @ECHO OFF
