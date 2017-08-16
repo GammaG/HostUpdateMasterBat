@@ -23,7 +23,7 @@ if not exist "%WINDIR%\System32\drivers\etc\makeHosts.py" (
  ::delete the pulled hosts file
  del "%TEMP%\hosts\hosts"
  
- if exist "%WINDIR%\System32\drivers\etc\makeHosts.py" ( 
+ if exist "%WINDIR%\System32\drivers\etc\myhosts" ( 
 	::delete the pulled myhosts file
 	del "%TEMP%\hosts\myhosts"
  )
