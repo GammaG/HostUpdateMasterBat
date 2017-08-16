@@ -22,11 +22,14 @@ if not exist "%WINDIR%\System32\drivers\etc\makeHosts.py" (
  copy "%WINDIR%\System32\drivers\etc\hosts" "%WINDIR%\System32\drivers\etc\hosts.bak" 
  ::delete the pulled hosts file
  del "%TEMP%\hosts\hosts"
+ 
+ if exist "%WINDIR%\System32\drivers\etc\makeHosts.py" ( 
+	::delete the pulled myhosts file
+	del "%TEMP%\hosts\myhosts"
+ )
+ 
  ::copy all content from the pulled folder::
  xcopy /s /h /Y "%TEMP%\hosts" "%WINDIR%\System32\drivers\etc" 
- ::replace the myhosts file::
- echo replace myhosts
- xcopy /Y "%CD%\myhosts.temp" "%WINDIR%\System32\drivers\etc\myhosts" 
  ::delete the pull folder::
  echo delete pull folder
  rd /s /q "%TEMP%\hosts"
