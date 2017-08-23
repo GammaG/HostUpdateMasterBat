@@ -16,7 +16,7 @@ if %ERRORLEVEL% NEQ 0 (
 
 if not exist "%WINDIR%\System32\drivers\etc\makeHosts.py" (
  ::clone the project::
- git -C "%TEMP%" clone --depth 5 https://github.com/StevenBlack/hosts.git
+ git -C "%TEMP%" clone --depth 1 https://github.com/StevenBlack/hosts.git
  ::backup the old host::
  echo backup old hosts file
  copy "%WINDIR%\System32\drivers\etc\hosts" "%WINDIR%\System32\drivers\etc\hosts.bak" 
