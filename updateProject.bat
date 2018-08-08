@@ -28,10 +28,20 @@ if not exist "%WINDIR%\System32\drivers\etc\makeHosts.py" (
 	del "%TEMP%\hosts\myhosts"
  )
  
+ echo moving project to system32/drivers/etc
  ::copy all content from the pulled folder::
  xcopy /s /h /Y "%TEMP%\hosts" "%WINDIR%\System32\drivers\etc" 
  ::delete the pull folder::
  echo delete pull folder
+ 
+ set OLDDIR=%CD%
+ cd %WINDIR%\System32\drivers\etc
+ ::install required python libs::
+ echo install python dependencies
+ python -m pip install --upgrade pip
+ pip3 install --user -r requirements.txt
+ cd %OLDDIR%
+ echo done
  rd /s /q "%TEMP%\hosts"
  ) else (
 ::update project::
